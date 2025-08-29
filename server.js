@@ -12,7 +12,7 @@ const serverPort = process.env.PORT || 3001;
 
 // Rota principal GET para "/"
 app.get("/", (req, res) => {
-    res.send("🚀 Servidor funcionando...");
+    res.send("🚀 Servidor funcionandoooooo...");
 });
 
 
