@@ -1,0 +1,32 @@
+{
+  "name": "body-e-query",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedrohBrito/body-e-query.git"
+  },
+  "keywords": [
+    "SENAI",
+    "API",
+    "NodeJS",
+    "Express"
+  ],
+  "author": "Pedro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PedrohBrito/body-e-query/issues"
+  },
+  "homepage": "https://github.com/PedrohBrito/body-e-query#readme",
+  "description": "Projeto API com filtro body e query",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
