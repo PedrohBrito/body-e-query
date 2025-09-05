@@ -3,7 +3,8 @@ import express from "express";
 import dotenv from "dotenv";
 import dados from "./src/data/dados.js";
 
-const {bruxos} = dados;
+const {bruxos, varinhas, animais, pocoes} = dados;
+
 
 // Criar aplicação com Express e configurar para aceitar JSON
 const app = express();
@@ -43,6 +44,47 @@ app.get('/bruxos', (req, res) => {
       total: resultado.length,
       data: resultado
     });
+});
+
+app.get("/varinhas", (req, res) => {
+  const { material, nucleo, comprimento } = req.query;
+  let resultadoVarinha = varinhas;
+
+  if (material) {
+    resultadoVarinha = resultadoVarinha.filter(v => v.material.toLowerCase().includes(material.toLowerCase()));
+  }
+
+  if (nucleo) {
+    resultadoVarinha = resultadoVarinha.filter(v => v.nucleo.toLowerCase().includes(nucleo.toLowerCase()));
+  }
+
+  if (comprimento) {
+    resultadoVarinha = resultadoVarinha.filter(v => v.comprimento.toLowerCase().includes(comprimento.toLowerCase()));
+  }
+
+  res.status(200).json ({
+  total: resultadoVarinha.length,
+  data: resultadoVarinha
+});
+});
+
+
+app.get("/pocoes", (req, res) => {
+  const { nome, efeito } = req.query;
+  let resultadoPocoes= pocoes;
+
+  if (nome) {
+    resultadoPocoes = resultadoPocoes.filter(p => p.pocoes.toLowerCase().includes(pocoes.toLowerCase()));
+  }
+
+  if (pocoes) {
+    resultadoPocoes = resultadoPocoes.filter(p => p.efeito.toLowerCase().includes(efeito.toLowerCase()));
+  }
+
+  res.status(200).json ({
+  total: resultadoPocoes.length,
+  data: resultadoPocoes
+});
 });
 
 
